@@ -104,6 +104,7 @@ class Enrollment(models.Model):
 class Question(models.Model):
     text = models.CharField(null=False, max_length=200)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    grade = models.IntegerField(default=1)
 
     # <HINT> A sample model method to calculate if learner get the score of the question
     def is_get_score(self, selected_ids):
